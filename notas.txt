@@ -1,0 +1,144 @@
+CONFIGURAÇÃO DO AMBIENTE DE DESENVOLVIMENTO
+============================================
+
+Ambiente: Python 3.12 + VSCode + PowerShell
+
+COMANDOS PARA CONFIGURAÇÃO DO AMBIENTE VIRTUAL
+-----------------------------------------------
+
+# Criar ambiente virtual
+python -m venv venv
+
+# Ativar no PowerShell
+venv\Scripts\Activate.ps1
+
+# Ativar no Command Prompt
+venv\Scripts\activate.bat
+
+# Ativar no Linux/Mac
+source venv/bin/activate
+
+# Desativar o ambiente (qualquer SO)
+deactivate
+
+GESTÃO DE DEPENDÊNCIAS
+----------------------
+
+# Instalar todas as dependências
+pip install -r requirements.txt
+
+# Atualizar o requirements.txt com as versões exatas
+pip freeze > requirements.txt
+
+# Instalar uma nova biblioteca
+pip install nome_biblioteca
+
+# Ver bibliotecas instaladas
+pip list
+
+ESTRUTURA DE PROJETO RECOMENDADA
+--------------------------------
+
+projeto_machine_learning/
+├── venv/                 # Ambiente virtual (NUNCA versionar)
+├── src/                  # Códigos fonte
+│   ├── machineLearn1.py
+│   ├── machineLearn2.py
+│   └── ...
+├── data/                 # Dados do projeto (opcional)
+├── notebooks/            # Jupyter notebooks (opcional)
+├── requirements.txt      # Dependências do projeto
+├── README.md            # Documentação
+└── .gitignore           # Arquivos ignorados pelo Git
+
+CONFIGURAÇÃO DO GIT
+-------------------
+
+# Arquivo .gitignore deve conter:
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.ipynb_checkpoints/
+
+CONFIGURAÇÃO DO VSCODE
+----------------------
+
+# Terminal padrão: PowerShell
+# Configurar no VSCode:
+# File > Preferences > Settings
+# Buscar: "terminal default profile windows"
+# Selecionar: "PowerShell"
+
+# Extensões recomendadas para Python:
+- Python (Microsoft)
+- Jupyter (Microsoft)
+- Python Debugger (Microsoft)
+- Pylance (Microsoft)
+
+BOAS PRÁTICAS
+-------------
+
+ Sempre trabalhar com ambiente virtual ativado
+ Manter requirements.txt atualizado
+ Versionar apenas código fonte, nunca o venv
+ Usar pasta src para organização
+ Comentar o código adequadamente
+ Testar em Python 3.12
+
+COMANDOS ÚTEIS NO POWERSHELL
+----------------------------
+
+# Navegar entre pastas
+cd src
+cd ..
+
+# Executar scripts Python
+python arquivo.py
+py arquivo.py
+
+# Ver versão do Python
+python --version
+
+# Ver localização do Python
+where python
+
+# Limpar tela do terminal
+Clear-Host
+
+SOLUÇÃO DE PROBLEMAS
+--------------------
+
+# Se houver conflito de versões:
+python -m pip install --upgrade pip
+
+# Recriar ambiente virtual corrompido:
+Remove-Item -Recurse -Force venv
+python -m venv venv
+venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# Verificar se o ambiente está ativo:
+# O prompt deve mostrar (venv) no início
+
+EXECUÇÃO DOS CÓDIGOS DA ESTÁCIO
+-------------------------------
+
+# Todos os códigos devem ser executados da pasta src:
+cd src
+python machineLearn1.py
+
+# Ou executar diretamente:
+python src/machineLearn1.py
+
+OBSERVAÇÕES IMPORTANTES
+-----------------------
+
+- Os códigos são educacionais, desenvolvidos para a disciplina de Big Data Analytics da Estácio
+- Configurado especificamente para Python 3.12
+- Ambiente testado no VSCode com terminal PowerShell
+- O venv pode ser deletado sem afetar o código fonte
+- Sempre ativar o venv antes de trabalhar no projeto
